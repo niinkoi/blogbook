@@ -18,10 +18,10 @@
 #
 FactoryBot.define do
   factory :user do
-    username { "MyString" }
-    first_name { "MyString" }
-    last_name { "MyString" }
-    email { "MyString" }
-    is_public { false }
+    username { SecureRandom.hex(3) }
+    first_name { %w[Nguyen Khoi Tom].sample }
+    last_name { %w[Hung Van Dinh].sample }
+    email { "#{SecureRandom.hex(4)}@gmail.com" }
+    is_public { true }
   end
 end
