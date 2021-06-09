@@ -32,6 +32,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :confirmable,
          authentication_keys: [:login], reset_password_keys: [:login]
+
+  attr_writer :login
+
   validates :email, uniqueness: true, presence: true, format: { with: URI::MailTo::EMAIL_REGEXP }
   validates :username, uniqueness: true, presence: true
   validates :first_name, presence: true
