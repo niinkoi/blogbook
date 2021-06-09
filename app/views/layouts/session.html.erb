@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title><%= yield :page_title %></title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <%= javascript_pack_tag 'application' %>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<body class="bg-defalut">
+  <h1 hidden><%= content_for(:page_title) %></h1>
+
+  <main class="main-content">
+    <div>
+      <%= render "shared/alert" %>
+      <!-- <h1><%= content_for(:page_title) %></h1> -->
+    </div>
+    <%= yield %>
+  </main>
+</body>
+</html>
