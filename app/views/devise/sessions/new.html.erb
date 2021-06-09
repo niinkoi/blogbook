@@ -24,17 +24,17 @@
 <% end %>
 
 <%= render "devise/shared/links" %> -->
-<%= content_for(:page_title, "Log in") %>
+<%= content_for(:page_title, "Sign in") %>
 <div class="row justify-content-center">
   <div class="col-lg-6 col-md-8">
     <div class="card bg-secondary shadow border-0">
-      <%= render "shared/oauth" %> 
+      <%= render "devise/shared/oauth" %> 
 
       <div class="card-body px-lg-5 py-lg-5">
         <div class="text-center text-muted mb-4">
           <small>Or sign up with credentials</small>
         </div>
-        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), role: 'form') do |form| %>
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name), role: 'form') do |form| %>
           <%= render "devise/shared/error_messages", resource: resource %> 
           <div class="form-group">
             <div class="input-group">
@@ -61,7 +61,7 @@
             </div>
           <% end %>
          <div class="text-center">
-            <%= form.submit "Log in", class: 'btn btn-lg btn-primary btn-block'%>
+            <%= form.submit "Sign in", class: 'btn btn-lg btn-primary btn-block'%>
           </div>
         <% end %>
       </div>
