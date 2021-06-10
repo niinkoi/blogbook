@@ -1,11 +1,40 @@
 <% if notice && notice.present? %>
-  <div role="alert">
-    <%= notice %>
-  </div>
+  <script type="text/javascript">
+    Swal.mixin({
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      showCloseButton: true,
+      timer: 2999,
+      timerProgressBar: true,
+      didOpen: (toast) => {
+        toast.addEventListener('mouseenter', Swal.stopTimer)
+        toast.addEventListener('mouseleave', Swal.resumeTimer)
+      }
+    }).fire({
+      icon: "success",
+      title: "<%= notice %>"
+    })
+  </script> 
 <% end %>
 
 <% if alert && alert.present? %>
-  <div role="alert">
-    <%= alert %>
-  </div>
+<script type="text/javascript">
+  Swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    showCloseButton: true,
+    timer: 2999,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.addEventListener('mouseenter', Swal.stopTimer)
+      toast.addEventListener('mouseleave', Swal.resumeTimer)
+    }
+  }).fire({
+    icon: "error",
+    title: "<%= alert %>"
+  })
+</script> >
 <% end %>
+

@@ -8,10 +8,15 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </head>
 
   <body>
-    <%= render "shared/alert" %> 
-    <%= yield %>
+    <main class="main-content">
+      <div>
+        <%= render "shared/alert" %> 
+      </div> 
+      <%= yield %>
+    </main> 
   </body>
 </html>
